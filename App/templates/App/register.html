@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar</title>
+</head>
+<body  style="background-image: url(/static/App/img/squad.jpg); background-size: cover; background-repeat: no-repeat;">
+    <div style="box-shadow: 15px 15px 8px rgba(0, 0, 0, 0.8); background: #3c21118a;  left: 40%; top: 200px; position: absolute; padding: 20px; border-radius: 10px; color: white;">
+        
+        <form  method="POST">
+            {% csrf_token %}
+            <h3>username</h3>
+            {{register.username}}
+            <h3>email</h3>
+            {{register.email}}
+            <h3>contraseña</h3>
+            {{register.password1}}
+            <h3>repetir contraseña</h3>
+            {{register.password2}}
+            <br>
+            <br>
+            <button style="border: none;  background: #112B3C; color: white; font-size: 12px; margin-left: 20%; width: 95px; height: 40px; cursor: pointer;" type="submit">!Registrar</button>
+            <br>
+            <p>si ya tiene la cuenta dale click -><a style="color: red; cursor: pointer;" href="{% url 'Login'%}">aqui</a><p/>
+        </form>
+    </div>
+    
+</body>
+</html>

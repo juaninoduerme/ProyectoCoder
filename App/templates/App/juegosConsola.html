@@ -1,0 +1,18 @@
+{% extends "App/padre.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+
+    <!--Template Juegos De Consola-->
+    <h1>Juegos De Consola</h1>
+    <h2>Conoce Nuestro Catalogo De Juegos De Consola</h2>
+    <br>
+    {% for j in juegosConsola %}
+        <li>{{j}}</li>
+        <button>
+            <a href="{% url 'EliminarJuegosConsola' j.nombre %}">Eliminar</a>
+            <a href="{% url 'EditarJuegosConsola' j.nombre %}">Editar</a>
+        </button>
+    {% endfor %}
+    <br>
+    <a class="navbar-brand" href="{% url 'JuegosConsolaFormulario' %}">Agrega Tu Juego</a>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "App/padre.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+
+    <!--Template Búsqueda-->
+
+    <h1>Resultado de tu Búsqueda</h1>
+
+    <p>Estamos Buscando Un Juego Llamado: {{nombre}}</p>
+
+    <h2>Tu resultado es:</h2>
+    {% if juegos %}    
+        <ul>
+            {% for juego in juegos %}
+                <li>Nombre: {{juego.nombre}}</li>
+                <li>FechaDeLanzamiento: {{juego.fechaDeLanzamiento}}</li>
+                <li>Genero: {{juego.genero}}</li>
+                <li>Sinopsis: {{juego.sinopsis}}</li>
+            {% endfor %}
+        </ul>    
+    {% else %}
+        <h3>No encontramos el juego D:</h3>
+        <a href="{% url 'JuegosPcFormulario'%}">Agregalo desde acá</a>
+    {% endif %}
+
+    </br>
+    <a href="{% url 'BusquedaJuegosPc'%}">Hacer Otra Búsqueda</a>
+
+{% endblock %}

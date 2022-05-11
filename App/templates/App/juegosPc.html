@@ -1,0 +1,19 @@
+{% extends "App/padre.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+
+    <!--Template Juegos De Pc-->
+    <h1>Juegos De Pc</h1>
+    <h2>Conoce Nuestro Catalogo de Juegos De Pc</h2>
+    <br>
+    {% for j in juegosPc %}
+        <li>{{j}}</li>
+        <button>
+            <a href="{% url 'EliminarJuegosPc' j.nombre %}">Eliminar</a>
+            <a href="{% url 'EditarJuegosPc' j.nombre %}">Editar</a>
+        </button>
+    {% endfor %}
+    <br>
+    <a class="navbar-brand" href="{% url 'JuegosPcFormulario' %}">Agregar Juego</a>
+
+{% endblock %}

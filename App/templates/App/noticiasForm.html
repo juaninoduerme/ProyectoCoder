@@ -1,0 +1,23 @@
+{% extends "App/padre.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+
+    <!--Template Noticias-->
+    <title>Noticias</title>
+    <h1> Las Mejores Noticias Sobre Juegos</h1>
+    <h2>Ingresa La Noticia De Tu Juego Favorito</h2>
+    {% if miFormulario.errors %}
+
+    <p style="color: red;"> Están mal los datos, revisalos :(</p>
+
+    {% endif %}
+
+    <form action="" method="POST"> {% csrf_token %}
+
+        <table>
+            {{ miFormulario.as_table }}
+        </table>
+
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+{% endblock %}

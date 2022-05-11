@@ -1,0 +1,23 @@
+{% extends "App/padre.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+
+    <!--Template Juegos De Consola-->
+    <title>JuegosDeConsola</title>
+    <h1>Juegos De Consola</h1>
+    <h2>Ingresa Tu Juego De Consola Favorito</h2>
+    {% if miFormulario.errors %}
+
+    <p style="color: red;"> Están mal los datos, revisalos :(</p>
+
+    {% endif %}
+
+    <form action="" method="POST"> {% csrf_token %}
+
+        <table>
+            {{ miFormulario.as_table }}
+        </table>
+
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+{% endblock %}

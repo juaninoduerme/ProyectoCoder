@@ -1,0 +1,28 @@
+{% extends "App/padre.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+
+    <!--Template Cuenntas-->
+    <div style="position: absolute; top: 20%; left: 40%; background: rgba(80, 79, 79, 0.767); padding: 20px; color: white;">
+        <h4>De: {{user}}</h4>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <h3>username</h3>
+            {{accountsfm.username}}
+            <h3>email</h3>
+            {{accountsfm.email}}
+            <h3>last_name</h3>
+            {{accountsfm.last_name}}
+            <h3>first_name</h3>
+            {{accountsfm.first_name}}
+            <h3>password1</h3>
+            {{accountsfm.password1}}
+            <h3>password2</h3>
+            {{accountsfm.password2}}
+            <br>
+
+            <br>
+            <button type="submit" style="background: #112B3C; outline: none; border: none; color: white;  font-size: 12px;  margin-left:20%; width: 95px; height: 40px; cursor: pointer;">Guardar</button>
+        </form>
+    </div>
+{% endblock %}

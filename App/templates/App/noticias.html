@@ -1,0 +1,18 @@
+{% extends "App/padre.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+
+    <!--Template Juegos-->
+    <h1>Noticias Sobre Juegos</h1>
+    <h2>Conoce nuestras noticias sobre VideoJuegos</h2>
+    <br>
+    {% for n in noticias %}
+        <li>{{n}}</li>
+        <button>
+            <a href="{% url 'EliminarNoticias' n.titulo %}">Eliminar</a>
+            <a href="{% url 'EditarNoticias' n.titulo %}">Editar</a>
+        </button>
+    {% endfor %}
+    <br>
+    <a class="navbar-brand" href="{% url 'NoticiasFormulario' %}">Agrega Tu Noticia</a>
+{% endblock %}

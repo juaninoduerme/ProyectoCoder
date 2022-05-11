@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login</title>
+</head>
+<body style="background-image: url(/static/App/img/squad.jpg); background-size: cover; background-repeat: no-repeat;">
+    <div style="box-shadow: 15px 15px 8px rgba(0, 0, 0, 0.8); background: #3c21118a;  left: 40%; top: 300px; position: absolute; padding: 20px; border-radius: 10px; color: white;">
+        {{mensaje}}
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{login.as_p}}
+            <button style="background: #112B3C; outline: none; border: none; color: white;  font-size: 12px;  margin-left:20%; width: 95px; height: 40px; cursor: pointer;" type="submit">Iniciar session</button>
+            <a style="background: #112B3C; color: white; font-size: 12px; margin-left: 2%; width: 95px; height: 40px; cursor: pointer; padding: 12px 15px;" href="{% url 'Registrar'%}">!Registrar</a>
+        </form>
+        {% for msg in messages %}
+        <p id="messages">{{msg}}</p>
+        {% endfor %}
+    </div>
+        
+</body>
+</html>
